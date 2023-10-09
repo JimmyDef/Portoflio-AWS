@@ -1,4 +1,7 @@
 /node_modules/
 .vscode
-/build/
+/build/kaza/
+/build/kanap/
+/build/booki/
+/build/ohmyfood/
 

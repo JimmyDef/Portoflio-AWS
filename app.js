@@ -36,6 +36,9 @@ app.get("/ohmyfood", (req, res) => {
 app.get("/booki", (req, res) => {
   res.sendFile(path.join(buildPath, "booki/index.html"));
 });
+app.get("/gameon", (req, res) => {
+  res.sendFile(path.join(buildPath, "gameon/index.html"));
+});
 
 app.use("/kanap/images", express.static(path.join(__dirname, "images")));
 // app.use(express.static("images"));
