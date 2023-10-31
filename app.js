@@ -39,6 +39,9 @@ app.get("/booki", (req, res) => {
 app.get("/gameon", (req, res) => {
   res.sendFile(path.join(buildPath, "gameon/index.html"));
 });
+app.get("/fisheye", (req, res) => {
+  res.sendFile(path.join(buildPath, "fisheye/index.html"));
+});
 
 app.use("/kanap/images", express.static(path.join(__dirname, "images")));
 // app.use(express.static("images"));
