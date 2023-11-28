@@ -42,6 +42,9 @@ app.get("/gameon", (req, res) => {
 app.get("/fisheye", (req, res) => {
   res.sendFile(path.join(buildPath, "fisheye/index.html"));
 });
+app.get("/lespetitsplat", (req, res) => {
+  res.sendFile(path.join(buildPath, "lespetitsplats/index.html"));
+});
 
 app.use("/kanap/images", express.static(path.join(__dirname, "images")));
 // app.use(express.static("images"));
