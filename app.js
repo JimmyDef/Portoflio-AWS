@@ -26,7 +26,7 @@ kanapApp.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "kanap/index.html"));
 });
 kanapApp.use("/images", express.static(path.join(__dirname, "images")));
-app.use(vhost("kanap.votredomaine.com", kanapApp));
+app.use(vhost("kanap.jimmydef.net", kanapApp));
 
 
 app.get("/", (req, res) => {
