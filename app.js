@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-
+const vhost = require("vhost");
 const productRoutes = require("./routes/product");
 
 const app = express();
@@ -20,6 +20,14 @@ app.use((req, res, next) => {
 
 const buildPath = path.join(__dirname, "build");
 app.use(express.static(buildPath));
+
+const kanapApp = express();
+kanapApp.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "kanap/index.html"));
+});
+kanapApp.use("/images", express.static(path.join(__dirname, "images")));
+app.use(vhost("kanap.votredomaine.com", kanapApp));
+
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(buildPath, "discover-me/index.html"));
