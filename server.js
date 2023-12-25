@@ -1,5 +1,5 @@
 import { createServer } from "http";
-import app, { set } from "./app";
+import app  from "./app";
 
 const normalizePort = (val) => {
   const port = parseInt(val, 10);
@@ -13,7 +13,7 @@ const normalizePort = (val) => {
   return false;
 };
 const port = normalizePort(process.env.PORT || "3000");
-set("port", port);
+app.set("port", port);
 
 const errorHandler = (error) => {
   if (error.syscall !== "listen") {
